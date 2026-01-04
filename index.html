@@ -358,8 +358,51 @@
                 grid-template-columns: 1fr !important;
             }
         }
+        .service-list {
+    margin-top: 1rem;
+}
+
+.service-item {
+    margin: 0.75rem 0;
+}
+
+.service-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+}
+
+.service-toggle:hover {
+    text-decoration: underline;
+}
+
+.service-description {
+    display: none;
+    margin-top: 0.4rem;
+    padding-left: 1.2rem;
+    font-size: 0.95rem;
+    color: #475569;
+}
     </style>
 </head>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.service-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const desc = btn.nextElementSibling;
+      const isOpen = desc.style.display === 'block';
+      desc.style.display = isOpen ? 'none' : 'block';
+      btn.textContent = (isOpen ? '→ ' : '↓ ') + btn.textContent.replace(/^([→↓]\s)/, '');
+    });
+  });
+});
+</script>
 <body>
     <header>
         <h1>Atlas Consulting</h1>
@@ -423,14 +466,63 @@
             <div class="services-grid">
                 <div class="service-card">
                     <h4>🎓 Training & Professional Development</h4>
-                    <ul>
-                        <li>AI-Aware Assessment Design</li>
-                        <li>Academic Integrity Workshops</li>
-                        <li>Faculty Digital Learning Tools</li>
-                        <li>Assessment Moderation Training</li>
-                        <li>EAP Teaching Methodology</li>
-                        <li>Prompt Engineering for Educators</li>
-                    </ul>
+                    <div class="service-list">
+
+    <div class="service-item">
+        <button type="button" class="service-toggle">
+            → AI-Aware Assessment Design
+        </button>
+        <div class="service-description">
+            Design assessments that remain valid, fair, and defensible in AI-enabled learning environments.
+        </div>
+    </div>
+
+    <div class="service-item">
+        <button type="button" class="service-toggle">
+            → Academic Integrity Workshops
+        </button>
+        <div class="service-description">
+            Support staff in moving from AI detection to prevention through assessment design and policy alignment.
+        </div>
+    </div>
+
+    <div class="service-item">
+        <button type="button" class="service-toggle">
+            → Faculty Digital Learning Tools
+        </button>
+        <div class="service-description">
+            Train faculty to use LMS and digital tools purposefully to support learning and assessment quality.
+        </div>
+    </div>
+
+    <div class="service-item">
+        <button type="button" class="service-toggle">
+            → Assessment Moderation Training
+        </button>
+        <div class="service-description">
+            Build consistent marking practices, moderation evidence, and accreditation-ready assessment processes.
+        </div>
+    </div>
+
+    <div class="service-item">
+        <button type="button" class="service-toggle">
+            → EAP Teaching Methodology
+        </button>
+        <div class="service-description">
+            Strengthen academic reading, writing, and transition skills aligned with university expectations.
+        </div>
+    </div>
+
+    <div class="service-item">
+        <button type="button" class="service-toggle">
+            → Prompt Engineering for Educators
+        </button>
+        <div class="service-description">
+            Enable staff to use AI tools productively without compromising learning outcomes or academic integrity.
+        </div>
+    </div>
+
+</div>
                 </div>
                 
                 <div class="service-card">
