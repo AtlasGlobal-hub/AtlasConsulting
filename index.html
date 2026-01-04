@@ -1,787 +1,1010 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlas Consulting | Advanced Technology, Learning & Academic Systems</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-        
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-        
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.95;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .credentials {
-            background: rgba(255,255,255,0.1);
-            padding: 1rem;
-            margin-top: 1.5rem;
-            border-radius: 8px;
-            font-size: 0.95rem;
-        }
-        
-        nav {
-            background: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 0;
-        }
-        
-        nav li {
-            margin: 0;
-        }
-        
-        nav a {
-            display: block;
-            padding: 1rem 1.5rem;
-            color: #1e3a8a;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background 0.3s;
-        }
-        
-        nav a:hover {
-            background: #eff6ff;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-        
-        section {
-            margin-bottom: 4rem;
-        }
-        
-        h2 {
-            color: #1e3a8a;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid #3b82f6;
-        }
-        
-        h3 {
-            color: #1e40af;
-            font-size: 1.4rem;
-            margin: 2rem 0 1rem 0;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-        }
-        
-        .service-card h4 {
-            color: #1e3a8a;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .service-card ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .service-card li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-        
-        .service-card li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #3b82f6;
-            font-weight: bold;
-        }
-        
-        .cta-section {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            color: white;
-            padding: 3rem 2rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-        
-        .cta-section h2 {
-            color: white;
-            border-bottom: none;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: white;
-            color: #1e3a8a;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        footer {
-            background: #1e293b;
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        .highlight-box {
-            background: #eff6ff;
-            border-left: 4px solid #3b82f6;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 4px;
-        }
-        
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .stat-box {
-            text-align: center;
-            padding: 1.5rem;
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            color: #3b82f6;
-            font-weight: 700;
-        }
-        
-        .stat-label {
-            color: #64748b;
-            margin-top: 0.5rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #1e3a8a;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #3b82f6;
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-        }
-        
-        .btn-submit {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
-        }
-        
-        .contact-info-box {
-            background: #f8fafc;
-            padding: 2rem;
-            border-radius: 8px;
-            border: 2px solid #e2e8f0;
-        }
-        
-        .contact-info-box h3 {
-            color: #1e3a8a;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        
-        .contact-info-box a {
-            color: #3b82f6;
-            text-decoration: none;
-        }
-        
-        .contact-info-box a:hover {
-            text-decoration: underline;
-        }
-        
-        .contact-info-box ul {
-            margin-top: 1rem;
-        }
-        
-        .contact-info-box li {
-            padding: 0.5rem 0;
-            color: #475569;
-        }
-        
-        #formStatus {
-            margin-top: 1rem;
-            padding: 1rem;
-            border-radius: 5px;
-            display: none;
-        }
-        
-        #formStatus.success {
-            display: block;
-            background: #dcfce7;
-            color: #166534;
-            border: 1px solid #86efac;
-        }
-        
-        #formStatus.error {
-            display: block;
-            background: #fee2e2;
-            color: #991b1b;
-            border: 1px solid #fca5a5;
-        }
-        
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-            
-            header p {
-                font-size: 1rem;
-            }
-            
-            nav ul {
-                flex-direction: column;
-            }
-            
-            nav a {
-                border-bottom: 1px solid #e2e8f0;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            #contact > div {
-                grid-template-columns: 1fr !important;
-            }
-        }
-        .service-list {
-    margin-top: 1rem;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atlas Consulting | Advanced Technology, Learning & Academic Systems</title>
 
-.service-item {
-    margin: 0.75rem 0;
-}
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-.service-toggle {
-    background: none;
-    border: none;
-    padding: 0;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #1e3a8a;
-    cursor: pointer;
-    text-align: left;
-    width: 100%;
-}
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8f9fa;
+    }
 
-.service-toggle:hover {
-    text-decoration: underline;
-}
+    header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
 
-.service-description {
-    display: none;
-    margin-top: 0.4rem;
-    padding-left: 1.2rem;
-    font-size: 0.95rem;
-    color: #475569;
-}
-    </style>
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .credentials {
+      background: rgba(255,255,255,0.1);
+      padding: 1rem;
+      margin-top: 1.5rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+
+    nav {
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0;
+    }
+
+    nav a {
+      display: block;
+      padding: 1rem 1.5rem;
+      color: #1e3a8a;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    nav a:hover { background: #eff6ff; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    section { margin-bottom: 4rem; }
+
+    h2 {
+      color: #1e3a8a;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid #3b82f6;
+    }
+
+    h3 {
+      color: #1e40af;
+      font-size: 1.4rem;
+      margin: 2rem 0 1rem 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .service-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .service-card h4 {
+      color: #1e3a8a;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ===== Accordion (Services) ===== */
+    .service-list { margin-top: 0.5rem; }
+
+    .service-item { margin: 0.75rem 0; }
+
+    .service-toggle {
+      background: none;
+      border: none;
+      padding: 0.25rem 0;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1e3a8a;
+      cursor: pointer;
+      text-align: left;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .service-toggle:hover { text-decoration: underline; }
+
+    .service-toggle .chev {
+      width: 1.2rem;
+      display: inline-block;
+      color: #3b82f6;
+      font-weight: 800;
+      transform: translateY(-1px);
+    }
+
+    .service-description {
+      display: none;
+      margin-top: 0.4rem;
+      padding-left: 1.7rem;
+      font-size: 0.95rem;
+      color: #475569;
+    }
+
+    .service-description.is-open { display: block; }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      color: white;
+      border-bottom: none;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: white;
+      color: #1e3a8a;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    footer {
+      background: #1e293b;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .highlight-box {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 4px;
+    }
+
+    .highlight-box ul { list-style: none; padding-left: 0; }
+    .highlight-box li { padding: 0.4rem 0; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .stat-box {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      color: #3b82f6;
+      font-weight: 700;
+    }
+
+    .stat-label {
+      color: #64748b;
+      margin-top: 0.5rem;
+    }
+
+    .form-group { margin-bottom: 1.5rem; }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #1e3a8a;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #3b82f6;
+    }
+
+    .form-group textarea { resize: vertical; }
+
+    .btn-submit {
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    }
+
+    .contact-info-box {
+      background: #f8fafc;
+      padding: 2rem;
+      border-radius: 8px;
+      border: 2px solid #e2e8f0;
+    }
+
+    .contact-info-box h3 {
+      color: #1e3a8a;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .contact-info-box a {
+      color: #3b82f6;
+      text-decoration: none;
+    }
+
+    .contact-info-box a:hover { text-decoration: underline; }
+
+    #formStatus {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 5px;
+      display: none;
+    }
+
+    #formStatus.success {
+      display: block;
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #86efac;
+    }
+
+    #formStatus.error {
+      display: block;
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fca5a5;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 1.8rem; }
+      header p { font-size: 1rem; }
+
+      nav ul { flex-direction: column; }
+      nav a { border-bottom: 1px solid #e2e8f0; }
+
+      .services-grid { grid-template-columns: 1fr; }
+      #contact > div { grid-template-columns: 1fr !important; }
+    }
+  </style>
 </head>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.service-toggle').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const desc = btn.nextElementSibling;
-      const isOpen = desc.style.display === 'block';
-      desc.style.display = isOpen ? 'none' : 'block';
-      btn.textContent = (isOpen ? '→ ' : '↓ ') + btn.textContent.replace(/^([→↓]\s)/, '');
-    });
-  });
-});
-</script>
+
 <body>
-    <header>
-        <h1>Atlas Consulting</h1>
-        <p> Advanced Technology, Learning & Academic Systems</p>
-        <div class="credentials">
-            Led by Dr. Hamed Al-Tairi | PhD Linguistics (University of Auckland, NZ) | Master of Information Technology – Data Science (Whitecliffe College, NZ) | Graduate Certificate in Applied eLearning (Manukau Institute of Technology, NZ) | MA Linguistics (Oakland University, USA) | TESL Certified | 15+ Years in Higher Education, Assessment & Academic Quality Systems
-        </div>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#expertise">Expertise</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    
-    <div class="container">
-        <section id="about">
-            <h2>Helping Higher Education Navigate the AI Transition</h2>
-            <p style="font-size: 1.1rem; line-height: 1.8;">I help universities, pathway programmes, and educational institutions strengthen assessment quality, academic integrity, and student readiness in an AI-disrupted academic landscape. With a unique combination of linguistics expertise, data science training, and 15+ years in EAP and academic quality assurance, I provide practical, evidence-based solutions for the challenges facing higher education today.</p>
-            
-            <div class="stats">
-                <div class="stat-box">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Years in Higher Education</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">10+</div>
-                    <div class="stat-label">Institutions Served</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">Countries (New Zealand, United States, Saudi Arabia, Yemen)</div>
-                </div>
-            </div>
-        </section>
+  <header>
+    <h1>Atlas Consulting</h1>
+    <p>Advanced Technology, Learning & Academic Systems</p>
+    <div class="credentials">
+      Led by Dr. Hamed Al-Tairi | PhD Linguistics (University of Auckland, NZ) | Master of Information Technology – Data Science (Whitecliffe College, NZ) |
+      Graduate Certificate in Applied eLearning (Manukau Institute of Technology, NZ) | MA Linguistics (Oakland University, USA) | TESL Certified |
+      15+ Years in Higher Education, Assessment & Academic Quality Systems
+    </div>
+  </header>
 
-        <section>
-  <h2>Experience Across</h2>
-  <div class="highlight-box">
+  <nav>
     <ul>
-      <li>✔ Public universities and polytechnics (NZQA-aligned)</li>
-      <li>✔ International pathway and foundation programmes</li>
-      <li>✔ English language academies and EAP providers</li>
-      <li>✔ Academic quality and accreditation committees</li>
-      <li>✔ Global AI and speech technology projects (Arabic NLP / ASR / TTS)</li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-    <p style="margin-top:1rem; font-size:0.95rem; color:#475569;">
-      Engagements include teaching, coordination, moderation, curriculum design, 
-      academic integrity processes, and advisory roles across New Zealand, 
-      the Middle East, and global remote projects.
-    </p>
+  </nav>
+
+  <div class="container">
+    <section id="about">
+      <h2>Helping Higher Education Navigate the AI Transition</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8;">
+        I help universities, pathway programmes, and educational institutions strengthen assessment quality, academic integrity, and student readiness in an AI-disrupted academic landscape.
+        With a combination of linguistics expertise, data science training, and 15+ years in EAP and academic quality assurance, I provide practical, evidence-based solutions for the challenges facing higher education today.
+      </p>
+
+      <div class="stats">
+        <div class="stat-box">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Years in Higher Education</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Institutions Served</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Countries (New Zealand, United States, Saudi Arabia, Yemen)</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experience Across</h2>
+      <div class="highlight-box">
+        <ul>
+          <li>✔ Public universities and polytechnics (NZQA-aligned)</li>
+          <li>✔ International pathway and foundation programmes</li>
+          <li>✔ English language academies and EAP providers</li>
+          <li>✔ Academic quality and accreditation committees</li>
+          <li>✔ Global AI and speech technology projects (Arabic NLP / ASR / TTS)</li>
+        </ul>
+        <p style="margin-top:1rem; font-size:0.95rem; color:#475569;">
+          Engagements include programme-level and institutional-level teaching, coordination, moderation, curriculum design,
+          academic integrity processes, and advisory roles across New Zealand, the Middle East, and global remote projects.
+        </p>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Core Services</h2>
+
+      <div class="services-grid">
+        <!-- TRAINING -->
+        <div class="service-card">
+          <h4>🎓 Training & Professional Development</h4>
+
+          <div class="service-list">
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> AI-Aware Assessment Design
+              </button>
+              <div class="service-description" hidden>
+                Design assessments that remain valid, fair, and defensible in AI-enabled learning environments.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Academic Integrity Workshops
+              </button>
+              <div class="service-description" hidden>
+                Support staff in moving from AI detection to prevention through assessment design and policy alignment.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Faculty Digital Learning Tools
+              </button>
+              <div class="service-description" hidden>
+                Train faculty to use LMS and digital tools purposefully to support learning and assessment quality.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Assessment Moderation Training
+              </button>
+              <div class="service-description" hidden>
+                Build consistent marking practices, moderation evidence, and accreditation-ready assessment processes.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> EAP Teaching Methodology
+              </button>
+              <div class="service-description" hidden>
+                Strengthen academic reading, writing, and transition skills aligned with university expectations.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Prompt Engineering for Educators
+              </button>
+              <div class="service-description" hidden>
+                Enable staff to use AI tools productively without compromising learning outcomes or academic integrity.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONSULTING -->
+        <div class="service-card">
+          <h4>💼 Consulting & Advisory</h4>
+
+          <div class="service-list">
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Academic Integrity & AI Policy
+              </button>
+              <div class="service-description" hidden>
+                Review and strengthen integrity policy and implementation so assessment remains credible in AI-enabled contexts.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Curriculum Design (PLO–CLO Mapping)
+              </button>
+              <div class="service-description" hidden>
+                Develop programme and course alignment maps that meet quality standards and support accreditation evidence.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> EdTech Transformation Strategy
+              </button>
+              <div class="service-description" hidden>
+                Diagnose capability gaps and design a practical roadmap for digital teaching, learning, and assessment.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> NZQA Compliance Support
+              </button>
+              <div class="service-description" hidden>
+                Strengthen moderation systems and documentation to align with NZQA-style expectations and audit readiness.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Programme Quality Review
+              </button>
+              <div class="service-description" hidden>
+                Review assessment, delivery, and course documentation to identify risk points and quality improvements.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Institutional Needs Analysis
+              </button>
+              <div class="service-description" hidden>
+                Conduct a structured analysis of curriculum, assessment, and digital delivery needs to guide decision-making.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SYSTEMS -->
+        <div class="service-card">
+          <h4>⚙️ Systems & Frameworks</h4>
+
+          <div class="service-list">
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> University Readiness Frameworks
+              </button>
+              <div class="service-description" hidden>
+                Define capability benchmarks and transition supports to move learners from EAP to degree study successfully.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Assessment Moderation Models
+              </button>
+              <div class="service-description" hidden>
+                Implement repeatable moderation workflows, templates, and evidence trails for consistent marking quality.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> AI-Resilient Assessment Toolkits
+              </button>
+              <div class="service-description" hidden>
+                Provide practical design patterns and task templates that reduce AI misuse without lowering standards.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Academic Integrity Processes
+              </button>
+              <div class="service-description" hidden>
+                Build clear integrity workflows for staff and students, including documentation and decision pathways.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> EAP Curriculum Architecture
+              </button>
+              <div class="service-description" hidden>
+                Design course structures, outcomes, and assessment sequences aligned to pathway and university requirements.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Quality Assurance Systems
+              </button>
+              <div class="service-description" hidden>
+                Create an evidence framework that standardises documentation and supports internal/external review cycles.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIGITAL PRODUCTS -->
+        <div class="service-card">
+          <h4>📦 Digital Products</h4>
+
+          <div class="service-list">
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Online EAP Course Modules
+              </button>
+              <div class="service-description" hidden>
+                Ready-to-deploy modules for academic reading and writing, designed for blended and online delivery.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Interactive Learning Templates (H5P)
+              </button>
+              <div class="service-description" hidden>
+                Reusable interactive activities that improve engagement and formative feedback in LMS environments.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Assessment Design Toolkits
+              </button>
+              <div class="service-description" hidden>
+                Practical templates and checklists to accelerate high-quality assessment design and moderation setup.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> LMS Course Shell Templates
+              </button>
+              <div class="service-description" hidden>
+                Structured course shells for consistent layout, student navigation, and assessment workflow clarity.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Academic Writing Resources
+              </button>
+              <div class="service-description" hidden>
+                Student-ready packs (tasks, models, checklists) aligned to academic conventions and assessment criteria.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> AI Prompt Libraries
+              </button>
+              <div class="service-description" hidden>
+                Curated prompts and usage guidance to support teaching, feedback, and content design responsibly.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AUDITS -->
+        <div class="service-card">
+          <h4>🔍 Audits & Reviews</h4>
+
+          <div class="service-list">
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Academic Assessment Audits
+              </button>
+              <div class="service-description" hidden>
+                Evaluate assessment validity, integrity risk, and marking consistency with clear recommendations and actions.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Programme Quality Compliance
+              </button>
+              <div class="service-description" hidden>
+                Check course documentation and delivery evidence against quality standards and readiness expectations.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Digital Curriculum Review
+              </button>
+              <div class="service-description" hidden>
+                Review the online learning experience to improve clarity, engagement, assessment workflow, and outcomes.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> External Moderation Services
+              </button>
+              <div class="service-description" hidden>
+                Provide independent moderation input and evidence reporting to strengthen trust in assessment outcomes.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Academic Integrity Risk Assessment
+              </button>
+              <div class="service-description" hidden>
+                Identify where AI misuse is most likely and design practical mitigations through task and process redesign.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Learning Platform Effectiveness
+              </button>
+              <div class="service-description" hidden>
+                Evaluate LMS use and teaching workflows to improve adoption, quality, and student learning experience.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SPECIALISED -->
+        <div class="service-card">
+          <h4>🗣️ Specialized Services</h4>
+
+          <div class="service-list">
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Arabic Linguistic Engineering (NLP/AI)
+              </button>
+              <div class="service-description" hidden>
+                Support Arabic language data workflows, annotation quality, and evaluation needs for NLP development.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Speech Technology Consulting (ASR/TTS)
+              </button>
+              <div class="service-description" hidden>
+                Provide Arabic prooflistening, transcription QA, and guideline refinement for ASR/TTS pipelines.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Arabic Phonetic Analysis
+              </button>
+              <div class="service-description" hidden>
+                Offer phonetic and phonological analysis to support research, materials, or speech-tech evaluation tasks.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Cultural Localization (Arabic)
+              </button>
+              <div class="service-description" hidden>
+                Localise content and guidelines to Gulf Arabic and culturally appropriate examples for safer deployment.
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button type="button" class="service-toggle" aria-expanded="false">
+                <span class="chev">→</span> Academic Research Consultation
+              </button>
+              <div class="service-description" hidden>
+                Advise on research design and reporting for language/education projects, with a focus on clarity and rigor.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="expertise">
+      <h2>Areas of Expertise</h2>
+
+      <div class="highlight-box">
+        <h3>🤖 AI & Educational Technology</h3>
+        <p>
+          Specialized in helping institutions adapt to AI disruption through redesigned assessments, academic integrity frameworks, and faculty development.
+          Data science training combined with practical teaching experience enables evidence-based, implementable solutions.
+        </p>
+      </div>
+
+      <div class="highlight-box">
+        <h3>✍️ EAP & Academic English</h3>
+        <p>
+          15+ years delivering and coordinating EAP programmes (NZCEL, IELTS, university pathways) across face-to-face, online, blended, and hybrid modes.
+          Focus on academic reading, writing, and university transition support.
+        </p>
+      </div>
+
+      <div class="highlight-box">
+        <h3>✅ Quality Assurance & Accreditation</h3>
+        <p>
+          Experience in NZQA-style moderation, curriculum alignment (PLO–CLO mapping), and institutional quality processes across multiple providers.
+        </p>
+      </div>
+
+      <div class="highlight-box">
+        <h3>🌍 Arabic Linguistic Engineering</h3>
+        <p>
+          Arabic NLP, ASR/TTS annotation, and linguistic QA for AI systems, with research expertise in Arabic phonetics.
+        </p>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <h2>Ready to Strengthen Your Academic Systems?</h2>
+      <p style="font-size: 1.1rem; margin-top: 1rem;">
+        Whether you need training, consulting, or custom solutions, let's discuss how I can support your institution's goals.
+      </p>
+      <div class="cta-buttons">
+        <a href="https://www.linkedin.com/in/hamed-al-tairi-001100" class="btn btn-secondary">View LinkedIn Profile</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Get in Touch</h2>
+      <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+        Interested in working together? Fill out the form below and I'll get back to you within 24 hours.
+      </p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+        <div class="contact-form">
+          <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" />
+            </div>
+
+            <div class="form-group">
+              <label for="organization">Organization/Institution</label>
+              <input type="text" id="organization" name="organization" />
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service Interested In *</label>
+              <select id="service" name="service" required>
+                <option value="">-- Select a Service --</option>
+
+                <optgroup label="Training & Development">
+                  <option value="AI-Aware Assessment Design">AI-Aware Assessment Design</option>
+                  <option value="Academic Integrity Workshops">Academic Integrity Workshops</option>
+                  <option value="Faculty Digital Learning Tools">Faculty Digital Learning Tools</option>
+                  <option value="Assessment Moderation Training">Assessment Moderation Training</option>
+                  <option value="EAP Teaching Methodology">EAP Teaching Methodology</option>
+                  <option value="Prompt Engineering for Educators">Prompt Engineering for Educators</option>
+                </optgroup>
+
+                <optgroup label="Consulting & Advisory">
+                  <option value="Academic Integrity & AI Policy">Academic Integrity & AI Policy</option>
+                  <option value="Curriculum Design (PLO–CLO Mapping)">Curriculum Design (PLO–CLO Mapping)</option>
+                  <option value="EdTech Transformation Strategy">EdTech Transformation Strategy</option>
+                  <option value="NZQA Compliance Support">NZQA Compliance Support</option>
+                  <option value="Programme Quality Review">Programme Quality Review</option>
+                  <option value="Institutional Needs Analysis">Institutional Needs Analysis</option>
+                </optgroup>
+
+                <optgroup label="Systems & Frameworks">
+                  <option value="University Readiness Frameworks">University Readiness Frameworks</option>
+                  <option value="Assessment Moderation Models">Assessment Moderation Models</option>
+                  <option value="AI-Resilient Assessment Toolkits">AI-Resilient Assessment Toolkits</option>
+                  <option value="Academic Integrity Processes">Academic Integrity Processes</option>
+                  <option value="EAP Curriculum Architecture">EAP Curriculum Architecture</option>
+                  <option value="Quality Assurance Systems">Quality Assurance Systems</option>
+                </optgroup>
+
+                <optgroup label="Digital Products">
+                  <option value="Online EAP Course Modules">Online EAP Course Modules</option>
+                  <option value="Interactive Learning Templates (H5P)">Interactive Learning Templates (H5P)</option>
+                  <option value="Assessment Design Toolkits">Assessment Design Toolkits</option>
+                  <option value="LMS Course Shell Templates">LMS Course Shell Templates</option>
+                  <option value="Academic Writing Resources">Academic Writing Resources</option>
+                  <option value="AI Prompt Libraries">AI Prompt Libraries</option>
+                </optgroup>
+
+                <optgroup label="Audits & Reviews">
+                  <option value="Academic Assessment Audits">Academic Assessment Audits</option>
+                  <option value="Programme Quality Compliance">Programme Quality Compliance</option>
+                  <option value="Digital Curriculum Review">Digital Curriculum Review</option>
+                  <option value="External Moderation Services">External Moderation Services</option>
+                  <option value="Academic Integrity Risk Assessment">Academic Integrity Risk Assessment</option>
+                  <option value="Learning Platform Effectiveness">Learning Platform Effectiveness</option>
+                </optgroup>
+
+                <optgroup label="Specialized Services">
+                  <option value="Arabic Linguistic Engineering (NLP/AI)">Arabic Linguistic Engineering (NLP/AI)</option>
+                  <option value="Speech Technology Consulting (ASR/TTS)">Speech Technology Consulting (ASR/TTS)</option>
+                  <option value="Arabic Phonetic Analysis">Arabic Phonetic Analysis</option>
+                  <option value="Cultural Localization (Arabic)">Cultural Localization (Arabic)</option>
+                  <option value="Academic Research Consultation">Academic Research Consultation</option>
+                </optgroup>
+
+                <option value="Other">Other (Please specify in message)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell me about your needs, timeline, and any specific questions..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Send Message</button>
+            <div id="formStatus"></div>
+          </form>
+        </div>
+
+        <div class="contact-info-box">
+          <h3>Direct Contact</h3>
+          <p style="margin-bottom: 1.5rem;">Prefer to reach out directly?</p>
+
+          <div style="margin-bottom: 1rem;">
+            <strong>📧 Email:</strong><br />
+            <a href="mailto:altairi2009@gmail.com">altairi2009@gmail.com</a>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <strong>📍 Location:</strong><br />
+            Auckland, New Zealand<br />
+            <small>(Available for global remote work)</small>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
-</section>
-        
-        <section id="services">
-            <h2>Core Services</h2>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <h4>🎓 Training & Professional Development</h4>
-                    <div class="service-list">
 
-    <div class="service-item">
-        <button type="button" class="service-toggle">
-            → AI-Aware Assessment Design
-        </button>
-        <div class="service-description">
-            Design assessments that remain valid, fair, and defensible in AI-enabled learning environments.
-        </div>
-    </div>
+  <footer>
+    <p>&copy; 2026 Atlas Consulting | Academic Systems & Integrity Solutions</p>
+    <p style="margin-top: 0.5rem; opacity: 0.8;">Led by Dr. Hamed Al-Tairi | Bridging Linguistics, Data Science, and Educational Excellence</p>
+  </footer>
 
-    <div class="service-item">
-        <button type="button" class="service-toggle">
-            → Academic Integrity Workshops
-        </button>
-        <div class="service-description">
-            Support staff in moving from AI detection to prevention through assessment design and policy alignment.
-        </div>
-    </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      /* ===== Services accordion ===== */
+      const toggles = document.querySelectorAll('.service-toggle');
 
-    <div class="service-item">
-        <button type="button" class="service-toggle">
-            → Faculty Digital Learning Tools
-        </button>
-        <div class="service-description">
-            Train faculty to use LMS and digital tools purposefully to support learning and assessment quality.
-        </div>
-    </div>
+      toggles.forEach(btn => {
+        const desc = btn.nextElementSibling;
+        if (desc && desc.classList.contains('service-description')) {
+          // Ensure consistent initial state
+          btn.setAttribute('aria-expanded', 'false');
+          desc.hidden = true;
+          desc.classList.remove('is-open');
+          const chev = btn.querySelector('.chev');
+          if (chev) chev.textContent = '→';
 
-    <div class="service-item">
-        <button type="button" class="service-toggle">
-            → Assessment Moderation Training
-        </button>
-        <div class="service-description">
-            Build consistent marking practices, moderation evidence, and accreditation-ready assessment processes.
-        </div>
-    </div>
+          btn.addEventListener('click', () => {
+            const isOpen = btn.getAttribute('aria-expanded') === 'true';
 
-    <div class="service-item">
-        <button type="button" class="service-toggle">
-            → EAP Teaching Methodology
-        </button>
-        <div class="service-description">
-            Strengthen academic reading, writing, and transition skills aligned with university expectations.
-        </div>
-    </div>
+            // Toggle only this item (keeps it simple and predictable)
+            btn.setAttribute('aria-expanded', String(!isOpen));
+            desc.hidden = isOpen;
+            desc.classList.toggle('is-open', !isOpen);
+            if (chev) chev.textContent = isOpen ? '→' : '↓';
+          });
+        }
+      });
 
-    <div class="service-item">
-        <button type="button" class="service-toggle">
-            → Prompt Engineering for Educators
-        </button>
-        <div class="service-description">
-            Enable staff to use AI tools productively without compromising learning outcomes or academic integrity.
-        </div>
-    </div>
+      /* ===== Form handling ===== */
+      const form = document.getElementById('contactForm');
+      const formStatus = document.getElementById('formStatus');
 
-</div>
-                </div>
-                
-                <div class="service-card">
-                    <h4>💼 Consulting & Advisory</h4>
-                    <ul>
-                        <li>Academic Integrity & AI Policy</li>
-                        <li>Curriculum Design (PLO-CLO Mapping)</li>
-                        <li>EdTech Transformation Strategy</li>
-                        <li>NZQA Compliance Support</li>
-                        <li>Programme Quality Review</li>
-                        <li>Institutional Needs Analysis</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <h4>⚙️ Systems & Frameworks</h4>
-                    <ul>
-                        <li>University Readiness Frameworks</li>
-                        <li>Assessment Moderation Models</li>
-                        <li>AI-Resilient Assessment Toolkits</li>
-                        <li>Academic Integrity Processes</li>
-                        <li>EAP Curriculum Architecture</li>
-                        <li>Quality Assurance Systems</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <h4>📦 Digital Products</h4>
-                    <ul>
-                        <li>Online EAP Course Modules</li>
-                        <li>Interactive Learning Templates (H5P)</li>
-                        <li>Assessment Design Toolkits</li>
-                        <li>LMS Course Shell Templates</li>
-                        <li>Academic Writing Resources</li>
-                        <li>AI Prompt Libraries</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <h4>🔍 Audits & Reviews</h4>
-                    <ul>
-                        <li>Academic Assessment Audits</li>
-                        <li>Programme Quality Compliance</li>
-                        <li>Digital Curriculum Review</li>
-                        <li>External Moderation Services</li>
-                        <li>Academic Integrity Risk Assessment</li>
-                        <li>Learning Platform Effectiveness</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <h4>🗣️ Specialized Services</h4>
-                    <ul>
-                        <li>Arabic Linguistic Engineering (NLP/AI)</li>
-                        <li>Speech Technology Consulting (ASR/TTS)</li>
-                        <li>Arabic Phonetic Analysis</li>
-                        <li>Cultural Localization</li>
-                        <li>Academic Research Consultation</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        
-        <section id="expertise">
-            <h2>Areas of Expertise</h2>
-            
-            <div class="highlight-box">
-                <h3>🤖 AI & Educational Technology</h3>
-                <p>Specialized in helping institutions adapt to AI disruption through redesigned assessments, academic integrity frameworks, and faculty development. Master of IT (Data Science) combined with practical teaching experience enables evidence-based, implementable solutions.</p>
-            </div>
-            
-            <div class="highlight-box">
-                <h3>✍️ EAP & Academic English</h3>
-                <p>15+ years delivering and coordinating EAP programmes (NZCEL, IELTS, university pathways) across face-to-face, online, blended, and hybrid modes. Expert in academic reading, writing, and university transition support.</p>
-            </div>
-            
-            <div class="highlight-box">
-                <h3>✅ Quality Assurance & Accreditation</h3>
-                <p>Extensive experience in NZQA-compliant assessment moderation, curriculum design (PLO-CLO mapping), and institutional quality processes. Course Coordinator and Academic Quality Specialist roles across multiple institutions.</p>
-            </div>
-            
-            <div class="highlight-box">
-                <h3>🌍 Arabic Linguistic Engineering</h3>
-                <p>Unique expertise in Arabic NLP, ASR/TTS annotation, and linguistic quality assurance for AI systems. PhD research in Arabic phonetics using ultrasound technology. Experience with major tech clients (Amazon Alexa, enterprise AI projects).</p>
-            </div>
-        </section>
-        
-        <section class="cta-section">
-            <h2>Ready to Strengthen Your Academic Systems?</h2>
-            <p style="font-size: 1.1rem; margin-top: 1rem;">Whether you need training, consulting, or custom solutions, let's discuss how I can support your institution's goals.</p>
-            <div class="cta-buttons">
-                <a href="https://www.linkedin.com/in/hamed-al-tairi-001100" class="btn btn-secondary">View LinkedIn Profile</a>
-            </div>
-        </section>
-        
-        <section id="contact">
-            <h2>Get in Touch</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 2rem;">
-                Interested in working together? Fill out the form below and I'll get back to you within 24 hours.
-            </p>
-            
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
-                <div class="contact-form">
-                    <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="organization">Organization/Institution</label>
-                            <input type="text" id="organization" name="organization">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service">Service Interested In *</label>
-                            <select id="service" name="service" required>
-                                <option value="">-- Select a Service --</option>
-                                <optgroup label="Training & Development">
-                                    <option value="AI-Aware Assessment Design">AI-Aware Assessment Design</option>
-                                    <option value="Academic Writing & Reading Systems">Academic Writing & Reading Systems</option>
-                                    <option value="Faculty Moderation Training">Faculty Moderation Training</option>
-                                    <option value="EAP Teaching Methodology">EAP Teaching Methodology</option>
-                                    <option value="Digital Learning Tools">Digital Learning Tools Integration</option>
-                                    <option value="Academic Integrity Workshops">Academic Integrity Workshops</option>
-                                    <option value="Prompt Engineering for Educators">Prompt Engineering for Educators</option>
-                                    <option value="Arabic Linguistic Annotation Training">Arabic Linguistic Annotation Training</option>
-                                </optgroup>
-                                <optgroup label="Consulting & Advisory">
-                                    <option value="Academic Integrity Policy">Academic Integrity & AI Policy</option>
-                                    <option value="Curriculum Design">Curriculum & Programme Design</option>
-                                    <option value="EdTech Transformation">EdTech & Digital Assessment Transformation</option>
-                                    <option value="NZQA Compliance">NZQA Compliance Support</option>
-                                    <option value="Programme Quality Review">Programme Quality Review</option>
-                                    <option value="Institutional Needs Analysis">Institutional Needs Analysis</option>
-                                    <option value="Academic Pathway Advising">Academic Pathway Advising</option>
-                                    <option value="Faculty Development Strategy">Faculty Development Strategy</option>
-                                </optgroup>
-                                <optgroup label="Systems & Frameworks">
-                                    <option value="University Readiness Framework">University Readiness Framework</option>
-                                    <option value="Assessment Moderation Model">Assessment Moderation Operating Model</option>
-                                    <option value="AI-Resilient Assessment Toolkit">AI-Resilient Assessment Design Toolkit</option>
-                                    <option value="Academic Integrity Process">Academic Integrity Process Framework</option>
-                                    <option value="EAP Curriculum Architecture">EAP Curriculum Architecture</option>
-                                    <option value="Digital Learning Platform Setup">Digital Learning Platform Setup</option>
-                                    <option value="Quality Assurance System">Quality Assurance Evidence Framework</option>
-                                </optgroup>
-                                <optgroup label="Digital Products">
-                                    <option value="Online EAP Modules">Online EAP Course Modules</option>
-                                    <option value="H5P Templates">Interactive Learning Templates (H5P)</option>
-                                    <option value="Assessment Toolkits">Assessment Design Toolkits</option>
-                                    <option value="LMS Templates">LMS Course Shell Templates</option>
-                                    <option value="Academic Writing Resources">Academic Writing Resource Packages</option>
-                                    <option value="AI Prompt Libraries">AI Prompt Libraries for Education</option>
-                                </optgroup>
-                                <optgroup label="Audits & Reviews">
-                                    <option value="Assessment Audit">Academic Assessment Audit</option>
-                                    <option value="Quality Compliance Audit">Programme Quality Compliance Audit</option>
-                                    <option value="Digital Curriculum Audit">Digital Curriculum Audit</option>
-                                    <option value="External Moderation">External Moderation Services</option>
-                                    <option value="Integrity Risk Assessment">Academic Integrity Risk Assessment</option>
-                                </optgroup>
-                                <optgroup label="Specialized Services">
-                                    <option value="Arabic Linguistic Engineering">Arabic Linguistic Engineering (NLP/AI)</option>
-                                    <option value="Speech Technology Consulting">Speech Technology Consulting (ASR/TTS)</option>
-                                    <option value="Arabic Phonetic Analysis">Arabic Phonetic Analysis</option>
-                                    <option value="Cultural Localization">Cultural Localization (Arabic)</option>
-                                    <option value="Academic Research Consultation">Academic Research Consultation</option>
-                                </optgroup>
-                                <option value="Other">Other (Please specify in message)</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Tell me about your needs, timeline, and any specific questions..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn-submit">Send Message</button>
-                        <div id="formStatus"></div>
-                    </form>
-                </div>
-                
-                <div class="contact-info-box">
-                    <h3>Direct Contact</h3>
-                    <p style="margin-bottom: 1.5rem;">Prefer to reach out directly?</p>
-                    
-                    <div style="margin-bottom: 1rem;">
-                        <strong>📧 Email:</strong><br>
-                        <a href="mailto:altairi2009@gmail.com">altairi2009@gmail.com</a>
-                    </div>
-                    
-                    <div style="margin-bottom: 2rem;">
-                        <strong>📍 Location:</strong><br>
-                        Auckland, New Zealand<br>
-                        <small>(Available for global remote work)</small>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    
-    <footer>
-        <p>&copy; 2026 Atlas Consulting | Academic Systems & Integrity Solutions</p>
-        <p style="margin-top: 0.5rem; opacity: 0.8;">Led by Dr. Hamed Al-Tairi | Bridging Linguistics, Data Science, and Educational Excellence</p>
-    </footer>
-    
-    <script>
-        // Form handling
-        const form = document.getElementById('contactForm');
-        const formStatus = document.getElementById('formStatus');
-        
+      if (form && formStatus) {
         form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(form);
-            
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    formStatus.className = 'success';
-                    formStatus.textContent = '✓ Thank you! Your message has been sent successfully. I\'ll get back to you within 24 hours.';
-                    form.reset();
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            } catch (error) {
-                formStatus.className = 'error';
-                formStatus.textContent = '✗ Sorry, there was an error sending your message. Please email me directly at altairi2009@gmail.com';
-            }
-        });
-        
-        // Smooth scrolling for navigation
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+          e.preventDefault();
+
+          const formData = new FormData(form);
+
+          try {
+            const response = await fetch(form.action, {
+              method: 'POST',
+              body: formData,
+              headers: { 'Accept': 'application/json' }
             });
+
+            if (response.ok) {
+              formStatus.className = 'success';
+              formStatus.textContent = "✓ Thank you! Your message has been sent successfully. I'll get back to you within 24 hours.";
+              form.reset();
+            } else {
+              throw new Error('Form submission failed');
+            }
+          } catch (error) {
+            formStatus.className = 'error';
+            formStatus.textContent = '✗ Sorry, there was an error sending your message. Please email me directly at altairi2009@gmail.com';
+          }
         });
-    </script>
+      }
+
+      /* ===== Smooth scrolling for navigation ===== */
+      document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = document.querySelector(anchor.getAttribute('href'));
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
